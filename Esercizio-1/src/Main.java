@@ -1,6 +1,4 @@
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,8 +6,8 @@ public class Main {
         System.out.println("Esercizio 1");
 
         Set<String> paroleSet = new HashSet<>();
-        Set<String> paroleDuplicate = new HashSet<>();
-        Set<String> paroleDistinte = new HashSet<>();
+        List<String> paroleDuplicate = new ArrayList<>();
+        List<String> paroleDistinte = new ArrayList<>();
 
         System.out.println("Inserire numero di parole");
         Scanner input = new Scanner(System.in);
@@ -20,7 +18,7 @@ public class Main {
             System.out.println("Inserire parola");
             String word = input.nextLine();
             boolean diverse = paroleSet.add(word);
-            if (diverse == true) {
+            if (diverse) {
                 paroleDistinte.add(word);
                 nPD = paroleDistinte.size();
             }else{
